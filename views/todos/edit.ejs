@@ -1,0 +1,18 @@
+<% layout('layouts/boilerplate') %>
+<link rel="stylesheet" href="/style/todos.css">
+<h1 ><%= user.username %>'s Todo List  </h1>
+
+
+
+<form action="/todo/<%=user._id%>?_method=PATCH" method="post" novalidate class="validated-form">   
+<ul class="reorderable-list">
+<% for( let todo of user.todos) { %>
+        <li class="reorderable-list__item dropzone" draggable="true"><%= todo.item %> </li>
+<% } %>
+</ul>
+<input type="text" name="key">
+<button>Save Todo</button>
+</form>
+
+<script src="/js/list.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

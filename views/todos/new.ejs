@@ -1,0 +1,24 @@
+<% layout('layouts/boilerplate') %>
+<link rel="stylesheet" href="/style/list.css">
+
+<div class="container">
+    <h2 id="tit">Add todo for <%= user.username %> </h2>
+    <form id="grocery" action="/todo/<%= user._id %>/list" method="POST" >
+        <input required id="item" name="item" type="text" />
+        <button class="btn btn-primary" id="bt" >submit</button>
+
+    </form>
+
+    <br>
+  <a href="/todo/<%= user._id %>">
+  <button id="but" class="btn btn-dark">See Todos</button>
+  </a>
+    <!-- <ul id="items">
+        
+    </ul> -->
+</div>
+
+
+
+
+
